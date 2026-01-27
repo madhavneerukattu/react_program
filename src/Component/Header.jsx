@@ -1,27 +1,38 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <header className="header">
-      {/* LEFT ICONS */}
-      <div className="header-left-icons">
-        <a href="#">🏠 Home</a>
-        <a href="#">🛒 Shop</a>
-      </div>
+    <header style={styles.header}>
+      <h2 style={styles.logo}>EZShop</h2>
 
-      {/* CENTER EZSHOP */}
-      <div className="header-center">
-        EZShop
-      </div>
-
-      {/* RIGHT LOGO */}
-      <div className="header-right">
-        <img
-          src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=200"
-          alt="Shop Logo"
-          className="shop-logo"
-        />
-      </div>
+      <nav>
+        <Link to="/" style={styles.link}>Home</Link>
+        <Link to="/products" style={styles.link}>Products</Link>
+        <Link to="/cart" style={styles.link}>Cart</Link>
+        <Link to="/admin-login" style={styles.link}>Admin</Link>
+      </nav>
     </header>
   );
 };
+
+const styles = {
+  header: {
+    width: "100%",
+    background: "orange",
+    padding: "15px 30px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  logo: {
+    color: "white",
+  },
+  link: {
+    color: "white",
+    marginLeft: "15px",
+    textDecoration: "none",
+  },
+};
+
 
 export default Header;
